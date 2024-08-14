@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-Commerce Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .banner {
+            background-image: url('https://via.placeholder.com/1200x300');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 10px;
+            width: calc(33.333% - 40px);
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .product p {
+            margin: 5px 0;
+        }
+        .product .price {
+            font-size: 1.2rem;
+            color: green;
+        }
+        .product button {
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My E-Commerce Website</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<div class="banner">
+    Shop the latest products!
+</div>
+
+<div class="products">
+    <div class="product">
+        <img src="https://via.placeholder.com/300" alt="Product 1">
+        <h2>Product 1</h2>
+        <p>Product description goes here.</p>
+        <p class="price">$10.00</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="https://via.placeholder.com/300" alt="Product 2">
+        <h2>Product 2</h2>
+        <p>Product description goes here.</p>
+        <p class="price">$20.00</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="https://via.placeholder.com/300" alt="Product 3">
+        <h2>Product 3</h2>
+        <p>Product description goes here.</p>
+        <p class="price">$30.00</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="https://via.placeholder.com/300" alt="Product 4">
+        <h2>Product 4</h2>
+        <p>Product description goes here.</p>
+        <p class="price">$40.00</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="https://via.placeholder.com/300" alt="Product 5">
+        <h2>Product 5</h2>
+        <p>Product description goes here.</p>
+        <p class="price">$50.00</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="https://via.placeholder.com/300" alt="Product 6">
+        <h2>Product 6</h2>
+        <p>Product description goes here.</p>
+        <p class="price">$60.00</p>
+        <button>Add to Cart</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 My E-Commerce Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
