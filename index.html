@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,27 +10,73 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
+
         header {
             background-color: #333;
             color: white;
             padding: 10px 0;
             text-align: center;
+            position: relative;
         }
+
         header h1 {
             margin: 0;
             font-size: 2rem;
         }
+
         nav {
             margin: 20px 0;
             text-align: center;
         }
+
         nav a {
             margin: 0 15px;
             color: #333;
             text-decoration: none;
             font-size: 1.1rem;
         }
+
+        .search-bar {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .search-bar input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .search-bar button:hover {
+            background-color: #555;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            background-color: #e2e2e2;
+        }
+
+        .categories a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
         .banner {
             background-image: url('https://via.placeholder.com/1200x300');
             background-size: cover;
@@ -40,13 +87,16 @@
             justify-content: center;
             align-items: center;
             font-size: 2rem;
+            margin-bottom: 20px;
         }
+
         .products {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             padding: 20px;
         }
+
         .product {
             border: 1px solid #ddd;
             margin: 10px;
@@ -54,32 +104,43 @@
             width: calc(33.333% - 40px);
             box-sizing: border-box;
             text-align: center;
+            background-color: white;
+            border-radius: 5px;
         }
+
         .product img {
             width: 100%;
             height: auto;
+            border-radius: 5px;
         }
+
         .product h2 {
             font-size: 1.5rem;
             margin: 10px 0;
         }
+
         .product p {
             margin: 5px 0;
         }
+
         .product .price {
             font-size: 1.2rem;
             color: green;
         }
+
         .product button {
             padding: 10px 15px;
             background-color: #333;
             color: white;
             border: none;
             cursor: pointer;
+            border-radius: 5px;
         }
+
         .product button:hover {
             background-color: #555;
         }
+
         footer {
             background-color: #333;
             color: white;
@@ -87,8 +148,110 @@
             padding: 20px 0;
             margin-top: 20px;
         }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+
+        .newsletter {
+            padding: 20px;
+            background-color: #555;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .newsletter input[type="email"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .newsletter button {
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .newsletter button:hover {
+            background-color: #222;
+        }
+
+        .login-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .login-modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+            border-radius: 10px;
+        }
+
+        .login-modal-content input[type="text"],
+        .login-modal-content input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .login-modal-content button {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .login-modal-content button:hover {
+            background-color: #555;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -98,8 +261,23 @@
         <a href="#">Products</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
+        <a href="#" onclick="document.getElementById('loginModal').style.display='block'">Login</a>
     </nav>
 </header>
+
+<div class="search-bar">
+    <input type="text" placeholder="Search for products...">
+    <button>Search</button>
+</div>
+
+<div class="categories">
+    <a href="#">All Categories</a>
+    <a href="#">Electronics</a>
+    <a href="#">Fashion</a>
+    <a href="#">Home & Garden</a>
+    <a href="#">Books</a>
+    <a href="#">Toys</a>
+</div>
 
 <div class="banner">
     Shop the latest products!
@@ -150,9 +328,43 @@
     </div>
 </div>
 
+<div class="newsletter">
+    <h2>Subscribe to our Newsletter</h2>
+    <p>Get the latest updates on new products and upcoming sales.</p>
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
+</div>
+
 <footer>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Help</a>
+    </div>
     <p>&copy; 2024 My E-Commerce Website. All rights reserved.</p>
 </footer>
 
+<!-- Login Modal -->
+<div id="loginModal" class="login-modal">
+    <div class="login-modal-content">
+        <span class="close" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
+        <h2>Login</h2>
+        <input type="text" placeholder="Enter Username" required>
+        <input type="password" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+    </div>
+</div>
+
+<script>
+    // Close the modal when clicking outside of it
+    window.onclick = function (event) {
+        var modal = document.getElementById('loginModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
 </body>
+
 </html>
